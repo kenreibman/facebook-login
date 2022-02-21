@@ -52,9 +52,11 @@ function setElements(isLoggedIn) {
     document.querySelector('#logout').style.display = 'block';
     document.querySelector('#profile').style.display = 'block';
     document.querySelector('#fb-btn').style.display = 'none';
+    document.querySelector('#heading').style.display = 'none';
   } else {
     document.querySelector('#profile').style.display = 'none';
     document.querySelector('#fb-btn').style.display = 'block';
     document.querySelector('#logout').style.display = 'none';
+    document.querySelector('#heading').style.display = 'block';
   }
 }
