@@ -28,8 +28,10 @@ function statusChangeCallback(response) {
   // Check to see if responseStatus is connected
   if (response.status === 'connected') {
     console.log('Logged in and authenticated');
+    setElements(true);
   } else {
     console.log('Authentication failed');
+    setElements(false);
   }
 }
 
@@ -37,4 +39,14 @@ function checkLoginState() {
   FB.getLoginStatus(function (response) {
     statusChangeCallback(response);
   });
+}
+
+function setElements(isLoggedIn) {
+  if (isLoggedIn) {
+    document.querySelector('#profile').style.display = 'block';
+    document.querySelector('#fb-btn').style.display = 'none';
+  } else {
+    document.querySelector('#profile').style.display = 'none';
+    document.querySelector('#fb-btn').style.display = 'block';
+  }
 }
