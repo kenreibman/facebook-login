@@ -41,12 +41,20 @@ function checkLoginState() {
   });
 }
 
+function logout() {
+  FB.logout(function (response) {
+    setElements(false); // Pass that you are no longer logged in.
+  });
+}
+
 function setElements(isLoggedIn) {
   if (isLoggedIn) {
+    document.querySelector('#logout').style.display = 'block';
     document.querySelector('#profile').style.display = 'block';
     document.querySelector('#fb-btn').style.display = 'none';
   } else {
     document.querySelector('#profile').style.display = 'none';
     document.querySelector('#fb-btn').style.display = 'block';
+    document.querySelector('#logout').style.display = 'none';
   }
 }
