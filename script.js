@@ -29,6 +29,7 @@ function statusChangeCallback(response) {
   if (response.status === 'connected') {
     console.log('Logged in and authenticated');
     setElements(true);
+    testAPI();
   } else {
     console.log('Authentication failed');
     setElements(false);
@@ -44,6 +45,16 @@ function checkLoginState() {
 function logout() {
   FB.logout(function (response) {
     setElements(false); // Pass that you are no longer logged in.
+  });
+}
+
+function testAPI() {
+  // Work with FB Graph API
+  // name/email field and a callback response
+  FB.api('/me?fields=name,email', function (response) {
+    if (response && !response.error) {
+      console.log(response);
+    }
   });
 }
 
