@@ -45,11 +45,24 @@ function checkLoginState() {
 function testAPI() {
   // Work with FB Graph API
   // name/email field and a callback response
-  FB.api('/me?fields=name,email', function (response) {
+  FB.api('/me?fields=name,email,birthday', function (response) {
     if (response && !response.error) {
-      console.log(response);
+      // console.log(response);
+      buildProfile(response);
     }
   });
+}
+
+function buildProfile(user) {
+  let profile = `
+    <h3>${user.name}</h3>
+    <ul class="list-group">
+        <li class="list-group-item">User ID: ${user.id}</li>
+        <li class="list-group-item">Email: ${user.email}</li>
+        <li class="list-group-item">Birthday: ${user.birthday}</li>
+        <li class="list-group-item">Location: ${user.location}</li>
+    </ul>
+    `;
 }
 
 function setElements(isLoggedIn) {
