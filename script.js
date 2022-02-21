@@ -60,7 +60,7 @@ function buildProfile(user) {
         <li class="list-group-item">User ID: ${user.id}</li>
         <li class="list-group-item">Email: ${user.email}</li>
         <li class="list-group-item">Birthday: ${user.birthday}</li>
-        <li class="list-group-item">Location: ${user.location}</li>
+        <li class="list-group-item">Location: ${user.location.name}</li>
     </ul>
     `;
 }
