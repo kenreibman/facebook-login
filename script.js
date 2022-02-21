@@ -32,3 +32,9 @@ function statusChangeCallback(response) {
     console.log('Authentication failed');
   }
 }
+
+function checkLoginState() {
+  FB.getLoginStatus(function (response) {
+    statusChangeCallback(response);
+  });
+}
