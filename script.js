@@ -63,6 +63,8 @@ function buildProfile(user) {
         <li class="list-group-item">Location: ${user.location.name}</li>
     </ul>
     `;
+
+  document.querySelector('#profile').innerHTML = profile;
 }
 
 function setElements(isLoggedIn) {
