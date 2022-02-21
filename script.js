@@ -42,12 +42,6 @@ function checkLoginState() {
   });
 }
 
-function logout() {
-  FB.logout(function (response) {
-    setElements(false); // Pass that you are no longer logged in.
-  });
-}
-
 function testAPI() {
   // Work with FB Graph API
   // name/email field and a callback response
@@ -70,4 +64,10 @@ function setElements(isLoggedIn) {
     document.querySelector('#logout').style.display = 'none';
     document.querySelector('#heading').style.display = 'block';
   }
+}
+
+function logout() {
+  FB.logout(function (response) {
+    setElements(false); // Pass that you are no longer logged in.
+  });
 }
