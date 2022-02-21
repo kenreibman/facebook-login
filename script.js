@@ -45,7 +45,7 @@ function checkLoginState() {
 function testAPI() {
   // Work with FB Graph API
   // name/email field and a callback response
-  FB.api('/me?fields=name,email,birthday', function (response) {
+  FB.api('/me?fields=name,email,birthday,location', function (response) {
     if (response && !response.error) {
       // console.log(response);
       buildProfile(response);
